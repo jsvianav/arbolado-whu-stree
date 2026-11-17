@@ -7,8 +7,9 @@ En este proyecto se entrenó una red neuronal basada en PointNet++ que separa lo
 ## Archivos
 
 - `arbolado_whu_stree_E1_E2.ipynb` es el notebook ejecutado en Google Colab con el modelo entrenado en Nanjing y sus resultados en Nanjing (E1) y Shenyang (E2).
+- `arbolado_whu_stree_E3.ipynb` es el mismo notebook ejecutado con el modelo entrenado en Shenyang y probado en Nanjing (E3).
 - `informe/informe_proyecto_final.pdf` es el informe técnico del proyecto.
-- `resultados/E1_E2/` tiene las curvas de entrenamiento y las figuras de ejemplo.
+- `resultados/E1_E2/` y `resultados/E3/` tienen las curvas de entrenamiento y las figuras de ejemplo de cada entrenamiento.
 
 ## Resultados en prueba
 
@@ -18,10 +19,11 @@ Promedio y desviación estándar de tres semillas, en porcentaje.
 |---|---|---|---|---|---|
 | E1, Nanjing a Nanjing | 94,2 | 55,9 ± 0,2 | 38,7 ± 0,3 | 58,5 ± 0,2 | 47,7 ± 0,2 |
 | E2, Nanjing a Shenyang | 96,0 | 71,9 ± 0,1 | 11,0 ± 0,2 | 79,5 ± 0,2 | 70,0 ± 0,1 |
+| E3, Shenyang a Nanjing | 73,7 ± 0,1 | 52,4 ± 0,3 | 51,1 ± 0,5 | 50,6 ± 0,4 | 40,7 ± 0,3 |
 
 ## Cómo ejecutarlo
 
-El notebook está pensado para Google Colab con GPU. Los datos de WHU-STree se piden a sus autores con el formulario del repositorio oficial (WHU-USI3DV/WHU-STree), y el identificador de la carpeta que ellos entregan se pega en la variable ID_CARPETA_WHU de la sección 1.1. La primera vez, el notebook copia las nubes de puntos a Mi unidad de Google Drive y después las procesa, entrena el modelo y lo evalúa. Si la sesión se desconecta, al volver a ejecutarlo continúa donde había quedado.
+El notebook está pensado para Google Colab con GPU. Los datos de WHU-STree se piden a sus autores con el formulario del repositorio oficial (WHU-USI3DV/WHU-STree), y el identificador de la carpeta que ellos entregan se pega en la variable ID_CARPETA_WHU de la sección 1.1. La primera vez, el notebook copia las nubes de puntos a Mi unidad de Google Drive y después las procesa, entrena el modelo y lo evalúa. Si la sesión se desconecta, al volver a ejecutarlo continúa donde había quedado. El experimento se escoge en la primera línea de la sección 1.1, con `EXPERIMENTO = "E1_E2"` o `EXPERIMENTO = "E3"`.
 
 ## Referencia del conjunto de datos
 
