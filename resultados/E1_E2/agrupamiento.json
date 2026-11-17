@@ -1,0 +1,9 @@
+{
+  "parametros": {
+    "sigma": 1.0,
+    "dist_min": 3.0,
+    "min_puntos": 314
+  },
+  "f1_validacion": 0.658905704307334,
+  "limite_min_puntos": 314
+}

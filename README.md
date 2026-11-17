@@ -9,7 +9,11 @@ En este proyecto se entrenó una red neuronal basada en PointNet++ que separa lo
 - `arbolado_whu_stree_E1_E2.ipynb` es el notebook ejecutado en Google Colab con el modelo entrenado en Nanjing y sus resultados en Nanjing (E1) y Shenyang (E2).
 - `arbolado_whu_stree_E3.ipynb` es el mismo notebook ejecutado con el modelo entrenado en Shenyang y probado en Nanjing (E3).
 - `informe/informe_proyecto_final.pdf` es el informe técnico del proyecto.
-- `resultados/E1_E2/` y `resultados/E3/` tienen las curvas de entrenamiento y las figuras de ejemplo de cada entrenamiento.
+- `resultados/E1_E2/` y `resultados/E3/` tienen lo que guardó el notebook en cada entrenamiento:
+  - `modelo.pt`, el modelo entrenado (pesos de la red, estado del optimizador e historial de las 60 épocas).
+  - `agrupamiento.json`, los parámetros del agrupamiento escogidos con el conjunto de validación.
+  - `resultados.json`, las métricas en prueba con su promedio y desviación de tres semillas.
+  - Las curvas de entrenamiento y las figuras de ejemplo.
 
 ## Resultados en prueba
 
@@ -24,6 +28,8 @@ Promedio y desviación estándar de tres semillas, en porcentaje.
 ## Cómo ejecutarlo
 
 El notebook está pensado para Google Colab con GPU. Los datos de WHU-STree se piden a sus autores con el formulario del repositorio oficial (WHU-USI3DV/WHU-STree), y el identificador de la carpeta que ellos entregan se pega en la variable ID_CARPETA_WHU de la sección 1.1. La primera vez, el notebook copia las nubes de puntos a Mi unidad de Google Drive y después las procesa, entrena el modelo y lo evalúa. Si la sesión se desconecta, al volver a ejecutarlo continúa donde había quedado. El experimento se escoge en la primera línea de la sección 1.1, con `EXPERIMENTO = "E1_E2"` o `EXPERIMENTO = "E3"`.
+
+Para usar el modelo ya entrenado sin volver a entrenar, se copia el `modelo.pt` del experimento a la carpeta `arbolado_resultados/E1_E2` o `arbolado_resultados/E3` de Google Drive antes de ejecutar el notebook. Al llegar a la celda de entrenamiento, el notebook ve que el entrenamiento ya había terminado, usa ese modelo y pasa directamente a la evaluación.
 
 ## Referencia del conjunto de datos
 
